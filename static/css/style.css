@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+}
+
+.nav-container {
+    width: 1200px;
+    height: 70px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.links a {
+text-decoration: none;
+color: #000;
+margin: 10px;
+font-size: 13px;
+}
+
+.links .verde {
+    color: #26a70c;
+    border-bottom: 1px solid #26a70c;
+}
+
+.nav-container button {
+    border: none;
+    background-color: #26a70c;
+   padding: 12px 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
