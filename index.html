@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MOBI-BIN 03 | Robot Recolector Inteligente</title>
+    <title>WALL-E</title>
 
     <link rel="stylesheet" href="static/css/style.css">
 
@@ -33,16 +33,21 @@
 
             <ul class="menu">
 
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#proyecto">Proyecto</a></li>
-                <li><a href="#funcionamiento">Funcionamiento</a></li>
-                <li><a href="#componentes">Componentes</a></li>
-                <li><a href="#galeria">Galería</a></li>
-              
+                <li><a href="#inicio" data-i18n="menuInicio">Inicio</a></li>
+                <li><a href="#proyecto" data-i18n="menuProyecto">Proyecto</a></li>
+                <li><a href="#funcionamiento" data-i18n="menuFuncionamiento">Funcionamiento</a></li>
+                <li><a href="#componentes" data-i18n="menuComponentes">Componentes</a></li>
+                <li><a href="#galeria" data-i18n="menuGaleria">Galería</a></li>
+
 
             </ul>
-
-            <a href="#" class="btn-nav">Descargar PDF</a>
+            <div class="language-selector">
+                <select id="language">
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="en">🇺🇸 English</option>
+                </select>
+            </div>
+            <a href="#" class="btn-nav" data-i18n="btnDescargar">Descargar PDF</a>
 
         </nav>
 
@@ -53,16 +58,13 @@
     <section class="hero" id="inicio">
 
         <div class="hero-texto">
-
-            <span class="subtitulo">PROYECTO DE ROBÓTICA</span>
-
-            <h1>
+            <h1 data-i18n="heroTitle">
                 Robot Recolector
                 <br>
                 de Residuos
             </h1>
 
-            <p>
+            <p data-i18n="heroTexto">
 
                 Robot autónomo diseñado para detectar, recolectar
                 y clasificar residuos reciclables y no reciclables
@@ -72,8 +74,8 @@
             </p>
 
             <div class="botones">
-                <a href="#proyecto" class="btn-verde">Conocer Más</a>
-                <a href="#galeria" class="btn-blanco">Ver Galería</a>
+                <a href="#proyecto" class="btn-verde" data-i18n="btnConocerMas">Conocer Más</a>
+                <a href="#galeria" class="btn-blanco" data-i18n="btnVerGaleria">Ver Galería</a>
             </div>
 
         </div>
@@ -94,9 +96,9 @@
 
             <i class="fas fa-location-arrow"></i>
 
-            <h3>Navegación Autónoma</h3>
+            <h3 data-i18n="card1Titulo">Navegación Autónoma</h3>
 
-            <p>Evita obstáculos utilizando sensores ultrasónicos.</p>
+            <p data-i18n="card1Texto">Evita obstáculos utilizando sensores ultrasónicos.</p>
 
         </div>
 
@@ -104,9 +106,9 @@
 
             <i class="fas fa-recycle"></i>
 
-            <h3>Clasificación Inteligente</h3>
+            <h3 data-i18n="card2Titulo">Clasificación Inteligente</h3>
 
-            <p>Separa residuos reciclables y basura común.</p>
+            <p data-i18n="card2Texto">Separa residuos reciclables y basura común.</p>
 
         </div>
 
@@ -114,18 +116,18 @@
 
             <i class="fas fa-battery-full"></i>
 
-            <h3>Gran Autonomía</h3>
+            <h3 data-i18n="card3Titulo">Gran Autonomía</h3>
 
-            <p>Batería de larga duración.</p>
+            <p data-i18n="card3Texto">Batería de larga duración.</p>
 
         </div>
 
         <div class="card">
 
             <i class="fas fa-cogs"></i>
-            <h3>Diseño Modular</h3>
+            <h3 data-i18n="card4Titulo">Diseño Modular</h3>
 
-            <p> Fácil mantenimiento y expansión.</p>
+            <p data-i18n="card4Texto"> Fácil mantenimiento y expansión.</p>
         </div>
     </section>
 
@@ -134,9 +136,9 @@
     <section class="proyecto" id="proyecto">
 
         <div class="titulo">
-            <h2>Sobre el Proyecto</h2>
+            <h2 data-i18n="proyectoTitulo">Sobre el Proyecto</h2>
 
-            <p>MOBI-BIN 03 es un robot educativo creado para automatizar la recolección y clasificación
+            <p data-i18n="proyectoTexto">MOBI-BIN 03 es un robot educativo creado para automatizar la recolección y clasificación
                 de residuos.</p>
 
         </div>
@@ -144,13 +146,13 @@
         <div class="contenido">
 
             <div class="texto">
-                <h3>Objetivos</h3>
+                <h3 data-i18n="objetivosTitulo">Objetivos</h3>
 
                 <ul>
-                    <li>Reducir la contaminación.</li>
-                    <li>Promover el reciclaje.</li>
-                    <li>Automatizar la recolección.</li>
-                    <li>Facilitar el aprendizaje.</li>
+                    <li data-i18n="objetivo1">Reducir la contaminación.</li>
+                    <li data-i18n="objetivo2">Promover el reciclaje.</li>
+                    <li data-i18n="objetivo3">Automatizar la recolección.</li>
+                    <li data-i18n="objetivo4">Facilitar el aprendizaje.</li>
                 </ul>
             </div>
 
@@ -165,29 +167,29 @@
     <section id="funcionamiento">
 
         <div class="titulo">
-            <h2>Funcionamiento</h2>
+            <h2 data-i18n="funcionamientoTitulo">Funcionamiento</h2>
         </div>
 
         <div class="pasos">
 
             <div class="paso">
                 <h3>01</h3>
-                <p>Detecta residuos.</p>
+                <p data-i18n="paso1">Detecta residuos.</p>
             </div>
 
             <div class="paso">
                 <h3>02</h3>
-                <p>Se acerca automáticamente.</p>
+                <p data-i18n="paso2">Se acerca automáticamente.</p>
             </div>
 
             <div class="paso">
                 <h3>03</h3>
-                <p>Clasifica el residuo.</p>
+                <p data-i18n="paso3">Clasifica el residuo.</p>
             </div>
 
             <div class="paso">
                 <h3>04</h3>
-                <p>Lo almacena.</p>
+                <p data-i18n="paso4">Lo almacena.</p>
             </div>
         </div>
     </section>
@@ -197,18 +199,18 @@
     <section id="componentes">
 
         <div class="titulo">
-            <h2>Componentes Principales</h2>
+            <h2 data-i18n="componentesTitulo">Componentes Principales</h2>
         </div>
 
         <div class="componentes-grid">
-            <div class="item">Arduino UNO</div>
-            <div class="item">Driver L298N</div>
-            <div class="item">Motores DC</div>
-            <div class="item">Sensores HC-SR04</div>
-            <div class="item">Matriz LED 8x8</div>
-            <div class="item">Batería 12V</div>
-            <div class="item">Chasis MDF</div>
-            <div class="item">Contenedores</div>
+            <div class="item" data-i18n="comp1">Arduino UNO</div>
+            <div class="item" data-i18n="comp2">Driver L298N</div>
+            <div class="item" data-i18n="comp3">Motores DC</div>
+            <div class="item" data-i18n="comp4">Sensores HC-SR04</div>
+            <div class="item" data-i18n="comp5">Matriz LED 8x8</div>
+            <div class="item" data-i18n="comp6">Batería 12V</div>
+            <div class="item" data-i18n="comp7">Chasis MDF</div>
+            <div class="item" data-i18n="comp8">Contenedores</div>
         </div>
     </section>
 
@@ -217,7 +219,7 @@
     <section id="galeria">
 
         <div class="titulo">
-            <h2>Galería</h2>
+            <h2 data-i18n="galeriaTitulo">Galería</h2>
         </div>
 
         <div class="galeria">
@@ -233,30 +235,30 @@
     <section class="especificaciones">
 
         <div class="titulo">
-            <h2>Especificaciones Técnicas</h2>
+            <h2 data-i18n="especificacionesTitulo">Especificaciones Técnicas</h2>
         </div>
 
         <table>
 
             <tr>
-                <th>Dimensiones</th>
+                <th data-i18n="espDimensiones">Dimensiones</th>
                 <td>250 × 190 × 210 mm</td>
             </tr>
             <tr>
-                <th>Peso</th>
+                <th data-i18n="espPeso">Peso</th>
                 <td>2.5 Kg</td>
             </tr>
             <tr>
-                <th>Controlador</th>
+                <th data-i18n="espControlador">Controlador</th>
                 <td>Arduino UNO</td>
             </tr>
             <tr>
-                <th>Alimentación</th>
+                <th data-i18n="espAlimentacion">Alimentación</th>
                 <td>12V</td>
             </tr>
             <tr>
-                <th>Motores</th>
-                <td>4 Motores DC</td>
+                <th data-i18n="espMotores">Motores</th>
+                <td data-i18n="espMotoresValor">4 Motores DC</td>
             </tr>
 
         </table>
@@ -268,7 +270,7 @@
         <div class="footer-logo">
             <div>
                 <h3>WALL-E</h3>
-                <p>Robot Recolector Inteligente</p>
+                <p data-i18n="footerSubtitulo">Robot Recolector Inteligente</p>
             </div>
         </div>
 
@@ -279,10 +281,10 @@
             <i class="fab fa-youtube"></i>
         </div>
 
-        <p>© 2026 MOBI-BIN 03 | Todos los derechos reservados.</p>
+        <p data-i18n="footerCopyright">© 2026 MOBI-BIN 03 | Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="static/js/script.js"></script>
 
 </body>
 

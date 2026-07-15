@@ -35,6 +35,35 @@
     scroll-behavior:smooth;
 }
 
+
+.language-selector select{
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    border:2px solid #38B000;
+
+    background:white;
+
+    color:#0A2342;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.language-selector select:hover{
+
+    background:#38B000;
+
+    color:white;
+
+}
+
 body{
 
     background:var(--fondo);

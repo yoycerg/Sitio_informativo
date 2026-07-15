@@ -1,289 +1,172 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*======================================
+        DICCIONARIO DE TRADUCCIONES
+======================================*/
 
-  /* ============================================================
-     1. HEADER: sombra al hacer scroll
-  ============================================================= */
-  const header = document.querySelector('.site-header');
-  const onScrollHeader = () => {
-    header.classList.toggle('scrolled', window.scrollY > 10);
-  };
-  onScrollHeader();
-  window.addEventListener('scroll', onScrollHeader);
+const traducciones = {
 
-  /* ============================================================
-     2. MENÚ MÓVIL (hamburguesa)
-  ============================================================= */
-  const hamburger = document.getElementById('hamburgerBtn');
-  const mainNav = document.getElementById('mainNav');
+    es: {
+        menuInicio: "Inicio",
+        menuProyecto: "Proyecto",
+        menuFuncionamiento: "Funcionamiento",
+        menuComponentes: "Componentes",
+        menuGaleria: "Galería",
+        btnDescargar: "Descargar PDF",
 
-  hamburger.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
-    document.body.classList.toggle('nav-open', isOpen);
-  });
+        heroTitle: "Robot Recolector<br>de Residuos",
+        heroTexto: "Robot autónomo diseñado para detectar, recolectar y clasificar residuos reciclables y no reciclables utilizando sensores, Arduino UNO y navegación inteligente.",
+        btnConocerMas: "Conocer Más",
+        btnVerGaleria: "Ver Galería",
 
-  // Cerrar el menú al elegir una opción
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('nav-open');
-    });
-  });
+        card1Titulo: "Navegación Autónoma",
+        card1Texto: "Evita obstáculos utilizando sensores ultrasónicos.",
+        card2Titulo: "Clasificación Inteligente",
+        card2Texto: "Separa residuos reciclables y basura común.",
+        card3Titulo: "Gran Autonomía",
+        card3Texto: "Batería de larga duración.",
+        card4Titulo: "Diseño Modular",
+        card4Texto: "Fácil mantenimiento y expansión.",
 
-  /* ============================================================
-     3. SCROLL SUAVE + RESALTE DE ENLACE ACTIVO
-  ============================================================= */
-  const navLinks = Array.from(document.querySelectorAll('.main-nav a'));
-  const sections = navLinks
-    .map(link => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
+        proyectoTitulo: "Sobre el Proyecto",
+        proyectoTexto: "MOBI-BIN 03 es un robot educativo creado para automatizar la recolección y clasificación de residuos.",
+        objetivosTitulo: "Objetivos",
+        objetivo1: "Reducir la contaminación.",
+        objetivo2: "Promover el reciclaje.",
+        objetivo3: "Automatizar la recolección.",
+        objetivo4: "Facilitar el aprendizaje.",
 
-  const setActiveLink = (id) => {
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-    });
-  };
+        funcionamientoTitulo: "Funcionamiento",
+        paso1: "Detecta residuos.",
+        paso2: "Se acerca automáticamente.",
+        paso3: "Clasifica el residuo.",
+        paso4: "Lo almacena.",
 
-  if ('IntersectionObserver' in window && sections.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) setActiveLink(entry.target.id);
-      });
-    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+        componentesTitulo: "Componentes Principales",
+        comp1: "Arduino UNO",
+        comp2: "Driver L298N",
+        comp3: "Motores DC",
+        comp4: "Sensores HC-SR04",
+        comp5: "Matriz LED 8x8",
+        comp6: "Batería 12V",
+        comp7: "Chasis MDF",
+        comp8: "Contenedores",
 
-    sections.forEach(section => observer.observe(section));
-  }
+        galeriaTitulo: "Galería",
 
-  /* ============================================================
-     4. TARJETAS "VER MÁS" — expandir/colapsar detalle
-  ============================================================= */
-  document.querySelectorAll('.feature-item .ver-mas').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.feature-item');
-      const expanded = card.classList.toggle('expanded');
-      btn.innerHTML = expanded
-        ? 'Ver menos <i class="fa-solid fa-arrow-up"></i>'
-        : 'Ver más <i class="fa-solid fa-arrow-right"></i>';
-    });
-  });
+        especificacionesTitulo: "Especificaciones Técnicas",
+        espDimensiones: "Dimensiones",
+        espPeso: "Peso",
+        espControlador: "Controlador",
+        espAlimentacion: "Alimentación",
+        espMotores: "Motores",
+        espMotoresValor: "4 Motores DC",
 
-  /* ============================================================
-     5. CARRUSEL DE GALERÍA
-  ============================================================= */
-  const track = document.getElementById('galleryTrack');
-  const viewport = track ? track.parentElement : null;
-  const prevBtn = document.getElementById('galleryPrev');
-  const nextBtn = document.getElementById('galleryNext');
-  const dotsWrap = document.getElementById('carouselDots');
+        footerSubtitulo: "Robot Recolector Inteligente",
+        footerCopyright: "© 2026 MOBI-BIN 03 | Todos los derechos reservados."
+    },
 
-  if (track && viewport) {
-    const slides = Array.from(track.children);
-    let perView = getPerView();
-    let page = 0;
+    en: {
+        menuInicio: "Home",
+        menuProyecto: "Project",
+        menuFuncionamiento: "How It Works",
+        menuComponentes: "Components",
+        menuGaleria: "Gallery",
+        btnDescargar: "Download PDF",
 
-    function getPerView() {
-      const w = window.innerWidth;
-      if (w <= 600) return 2;
-      if (w <= 1100) return 3;
-      return 4;
+        heroTitle: "Waste Collector<br>Robot",
+        heroTexto: "Autonomous robot designed to detect, collect and sort recyclable and non-recyclable waste using sensors, an Arduino UNO and smart navigation.",
+        btnConocerMas: "Learn More",
+        btnVerGaleria: "View Gallery",
+
+        card1Titulo: "Autonomous Navigation",
+        card1Texto: "Avoids obstacles using ultrasonic sensors.",
+        card2Titulo: "Smart Sorting",
+        card2Texto: "Separates recyclable waste from common trash.",
+        card3Titulo: "Long Battery Life",
+        card3Texto: "Long-lasting battery.",
+        card4Titulo: "Modular Design",
+        card4Texto: "Easy maintenance and expansion.",
+
+        proyectoTitulo: "About the Project",
+        proyectoTexto: "MOBI-BIN 03 is an educational robot created to automate waste collection and sorting.",
+        objetivosTitulo: "Goals",
+        objetivo1: "Reduce pollution.",
+        objetivo2: "Promote recycling.",
+        objetivo3: "Automate collection.",
+        objetivo4: "Support learning.",
+
+        funcionamientoTitulo: "How It Works",
+        paso1: "Detects waste.",
+        paso2: "Approaches automatically.",
+        paso3: "Sorts the waste.",
+        paso4: "Stores it.",
+
+        componentesTitulo: "Main Components",
+        comp1: "Arduino UNO",
+        comp2: "L298N Driver",
+        comp3: "DC Motors",
+        comp4: "HC-SR04 Sensors",
+        comp5: "8x8 LED Matrix",
+        comp6: "12V Battery",
+        comp7: "MDF Chassis",
+        comp8: "Containers",
+
+        galeriaTitulo: "Gallery",
+
+        especificacionesTitulo: "Technical Specifications",
+        espDimensiones: "Dimensions",
+        espPeso: "Weight",
+        espControlador: "Controller",
+        espAlimentacion: "Power Supply",
+        espMotores: "Motors",
+        espMotoresValor: "4 DC Motors",
+
+        footerSubtitulo: "Smart Waste Collector Robot",
+        footerCopyright: "© 2026 MOBI-BIN 03 | All rights reserved."
     }
 
-    function totalPages() {
-      return Math.max(1, Math.ceil(slides.length / perView));
-    }
+};
 
-    function buildDots() {
-      dotsWrap.innerHTML = '';
-      for (let i = 0; i < totalPages(); i++) {
-        const dot = document.createElement('span');
-        dot.className = 'dot';
-        dot.addEventListener('click', () => goTo(i));
-        dotsWrap.appendChild(dot);
-      }
-      updateDots();
-    }
+/*======================================
+        APLICAR TRADUCCIÓN
+======================================*/
 
-    function updateDots() {
-      Array.from(dotsWrap.children).forEach((d, i) => {
-        d.classList.toggle('active', i === page);
-      });
-    }
+function aplicarIdioma(idioma) {
 
-    function update() {
-      const slideWidth = viewport.clientWidth / perView;
-      const offset = page * slideWidth * perView;
-      track.style.transform = `translateX(-${offset}px)`;
-      track.querySelectorAll('figure').forEach(fig => {
-        fig.style.width = `${slideWidth}px`;
-      });
-      updateDots();
-    }
+    const diccionario = traducciones[idioma];
 
-    function goTo(i) {
-      const max = totalPages() - 1;
-      page = Math.min(Math.max(i, 0), max);
-      update();
-    }
+    if (!diccionario) return;
 
-    prevBtn.addEventListener('click', () => {
-      const max = totalPages() - 1;
-      goTo(page === 0 ? max : page - 1); // ciclo infinito
-    });
+    document.querySelectorAll("[data-i18n]").forEach(elemento => {
 
-    nextBtn.addEventListener('click', () => {
-      const max = totalPages() - 1;
-      goTo(page === max ? 0 : page + 1); // ciclo infinito
-    });
+        const clave = elemento.getAttribute("data-i18n");
 
-    // Deslizar con touch/swipe
-    let startX = 0;
-    viewport.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-    viewport.addEventListener('touchend', e => {
-      const diff = e.changedTouches[0].clientX - startX;
-      if (Math.abs(diff) > 40) {
-        diff < 0 ? nextBtn.click() : prevBtn.click();
-      }
-    });
-
-    window.addEventListener('resize', () => {
-      perView = getPerView();
-      page = 0;
-      buildDots();
-      update();
-    });
-
-    buildDots();
-    update();
-
-    // Auto-play suave, se detiene si el usuario interactúa
-    let autoplay = setInterval(() => nextBtn.click(), 5000);
-    [prevBtn, nextBtn, viewport].forEach(el => {
-      el.addEventListener('pointerdown', () => clearInterval(autoplay));
-    });
-  }
-
-  /* ============================================================
-     6. BOTÓN "DESCARGAR FICHA TÉCNICA" — genera un archivo real
-  ============================================================= */
-  const downloadBtn = document.getElementById('downloadBtn');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const contenido = `FICHA TÉCNICA — MOBI-BIN 03 (ROBOT RECOLECTOR)
-================================================
-
-ESPECIFICACIONES TÉCNICAS
---------------------------------
-Dimensiones (L x A x H):   250 x 190 x 210 mm
-Peso aproximado:           2.5 kg
-Material del chasis:       Madera contrachapada 3 mm
-Capacidad de carga:        2 x 3 Litros
-Fuente de alimentación:    Batería 12V - 2200 mAh
-Autonomía estimada:        2 - 3 horas
-Velocidad máxima:          0.6 m/s
-Sensores:                  Ultrasónico, IR, Encoder
-Control:                   Autónomo / Remoto
-Microcontrolador:          Arduino UNO
-
-CARACTERÍSTICAS
---------------------------------
-- Navegación autónoma con detección de obstáculos
-- Clasificación automática de residuos reciclables y no reciclables
-- Capacidad de carga en dos contenedores independientes
-- Control remoto y manual
-- Diseño modular y escalable
-
-CONTACTO
---------------------------------
-proyecto.mobibin03@gmail.com
-Proyecto de Ingeniería y Robótica
-
-© 2025 Mobi-Bin 03. Todos los derechos reservados.
-`;
-      const blob = new Blob([contenido], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'ficha-tecnica-mobibin03.txt';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-
-      showToast('Ficha técnica descargada correctamente ✓');
-    });
-  }
-
-  /* ============================================================
-     7. TOAST DE NOTIFICACIÓN
-  ============================================================= */
-  const toast = document.getElementById('toast');
-  let toastTimer;
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
-  }
-
-  // Botones "Ver más" del footer de specs y "Conoce más"
-  document.querySelectorAll('.specs-btn, .hero-cta').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const href = btn.getAttribute('href');
-      if (!href || href === '#') e.preventDefault();
-    });
-  });
-
-  /* ============================================================
-     8. BOTÓN VOLVER ARRIBA
-  ============================================================= */
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('show', window.scrollY > 500);
-  });
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  /* ============================================================
-     9. TILT SUAVE EN LA IMAGEN DEL HERO AL MOVER EL MOUSE
-  ============================================================= */
-  const heroImageWrap = document.querySelector('.hero-image-wrap');
-  const heroImage = document.querySelector('.hero-image');
-  if (heroImageWrap && heroImage && window.matchMedia('(hover: hover)').matches) {
-    heroImageWrap.addEventListener('mousemove', (e) => {
-      const rect = heroImageWrap.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      heroImage.style.transform = `rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
-    });
-    heroImageWrap.addEventListener('mouseleave', () => {
-      heroImage.style.transform = 'rotateY(0) rotateX(0)';
-    });
-  }
-
-  /* ============================================================
-     10. ANIMACIÓN DE ENTRADA AL HACER SCROLL (fade + slide up)
-  ============================================================= */
-  const revealEls = document.querySelectorAll('.feature-item, .panel, .hero-callout');
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          obs.unobserve(entry.target);
+        if (diccionario[clave] !== undefined) {
+            elemento.innerHTML = diccionario[clave];
         }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => {
-      el.classList.add('reveal');
-      revealObserver.observe(el);
+
     });
-  }
+
+    document.documentElement.lang = idioma;
+
+    localStorage.setItem("idioma", idioma);
+
+}
+
+/*======================================
+        INICIALIZACIÓN
+======================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const selector = document.getElementById("language");
+
+    const idiomaGuardado = localStorage.getItem("idioma") || "es";
+
+    selector.value = idiomaGuardado;
+    aplicarIdioma(idiomaGuardado);
+
+    selector.addEventListener("change", (e) => {
+        aplicarIdioma(e.target.value);
+    });
 
 });
