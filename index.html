@@ -2,36 +2,288 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio Informativo</title>
+
+    <title>MOBI-BIN 03 | Robot Recolector Inteligente</title>
+
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7a4f0d4f91.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <nav>
-        <div class="nav-container">
-            <img src="static/images/logo.png" alt="">
-            <div class="links">
-                <a href="" class="verde">INICIO</a>
-                <a href="">PROYECTO</a>
-                <a href="">CARACTERÍSTICAS</a>
-                <a href="">ESPECIFICACIONES</a>
-                <a href="">PLANOS</a>
-                <a href="">COMPONENTES</a>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <img src="static/images/logo.png" alt="Logo">
             </div>
-            <button>DESCARGAR FICHA TÉCNICA</button>
+
+            <ul class="menu">
+
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyecto">Proyecto</a></li>
+                <li><a href="#funcionamiento">Funcionamiento</a></li>
+                <li><a href="#componentes">Componentes</a></li>
+                <li><a href="#galeria">Galería</a></li>
+              
+
+            </ul>
+
+            <a href="#" class="btn-nav">Descargar PDF</a>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-texto">
+
+            <span class="subtitulo">PROYECTO DE ROBÓTICA</span>
+
+            <h1>
+                Robot Recolector
+                <br>
+                de Residuos
+            </h1>
+
+            <p>
+
+                Robot autónomo diseñado para detectar, recolectar
+                y clasificar residuos reciclables y no reciclables
+                utilizando sensores, Arduino UNO y navegación
+                inteligente.
+
+            </p>
+
+            <div class="botones">
+                <a href="#proyecto" class="btn-verde">Conocer Más</a>
+                <a href="#galeria" class="btn-blanco">Ver Galería</a>
+            </div>
+
         </div>
-    </nav>
-    <div class="container">
-<div class="card-1"></div>
-<div class="card-2"><img src="static/images/inicio.png" alt=""></div>
-    </div>
+
+        <div class="hero-img">
+
+            <img src="img/hero.png" alt="Robot">
+
+        </div>
+
+    </section>
+
+    <!-- ================= TARJETAS ================= -->
+
+    <section class="info">
+
+        <div class="card">
+
+            <i class="fas fa-location-arrow"></i>
+
+            <h3>Navegación Autónoma</h3>
+
+            <p>Evita obstáculos utilizando sensores ultrasónicos.</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-recycle"></i>
+
+            <h3>Clasificación Inteligente</h3>
+
+            <p>Separa residuos reciclables y basura común.</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-battery-full"></i>
+
+            <h3>Gran Autonomía</h3>
+
+            <p>Batería de larga duración.</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-cogs"></i>
+            <h3>Diseño Modular</h3>
+
+            <p> Fácil mantenimiento y expansión.</p>
+        </div>
+    </section>
+
+    <!-- ================= PROYECTO ================= -->
+
+    <section class="proyecto" id="proyecto">
+
+        <div class="titulo">
+            <h2>Sobre el Proyecto</h2>
+
+            <p>MOBI-BIN 03 es un robot educativo creado para automatizar la recolección y clasificación
+                de residuos.</p>
+
+        </div>
+
+        <div class="contenido">
+
+            <div class="texto">
+                <h3>Objetivos</h3>
+
+                <ul>
+                    <li>Reducir la contaminación.</li>
+                    <li>Promover el reciclaje.</li>
+                    <li>Automatizar la recolección.</li>
+                    <li>Facilitar el aprendizaje.</li>
+                </ul>
+            </div>
+
+            <div class="imagen">
+                <img src="static/images/inicio.png" alt="Proyecto">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FUNCIONAMIENTO ================= -->
+
+    <section id="funcionamiento">
+
+        <div class="titulo">
+            <h2>Funcionamiento</h2>
+        </div>
+
+        <div class="pasos">
+
+            <div class="paso">
+                <h3>01</h3>
+                <p>Detecta residuos.</p>
+            </div>
+
+            <div class="paso">
+                <h3>02</h3>
+                <p>Se acerca automáticamente.</p>
+            </div>
+
+            <div class="paso">
+                <h3>03</h3>
+                <p>Clasifica el residuo.</p>
+            </div>
+
+            <div class="paso">
+                <h3>04</h3>
+                <p>Lo almacena.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= COMPONENTES ================= -->
+
+    <section id="componentes">
+
+        <div class="titulo">
+            <h2>Componentes Principales</h2>
+        </div>
+
+        <div class="componentes-grid">
+            <div class="item">Arduino UNO</div>
+            <div class="item">Driver L298N</div>
+            <div class="item">Motores DC</div>
+            <div class="item">Sensores HC-SR04</div>
+            <div class="item">Matriz LED 8x8</div>
+            <div class="item">Batería 12V</div>
+            <div class="item">Chasis MDF</div>
+            <div class="item">Contenedores</div>
+        </div>
+    </section>
+
+    <!-- ================= GALERÍA ================= -->
+
+    <section id="galeria">
+
+        <div class="titulo">
+            <h2>Galería</h2>
+        </div>
+
+        <div class="galeria">
+            <img src="img/galeria1.png" alt="">
+            <img src="img/galeria2.png" alt="">
+            <img src="img/galeria3.png" alt="">
+            <img src="img/galeria4.png" alt="">
+        </div>
+    </section>
+
+    <!-- ================= ESPECIFICACIONES ================= -->
+
+    <section class="especificaciones">
+
+        <div class="titulo">
+            <h2>Especificaciones Técnicas</h2>
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Dimensiones</th>
+                <td>250 × 190 × 210 mm</td>
+            </tr>
+            <tr>
+                <th>Peso</th>
+                <td>2.5 Kg</td>
+            </tr>
+            <tr>
+                <th>Controlador</th>
+                <td>Arduino UNO</td>
+            </tr>
+            <tr>
+                <th>Alimentación</th>
+                <td>12V</td>
+            </tr>
+            <tr>
+                <th>Motores</th>
+                <td>4 Motores DC</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-logo">
+            <div>
+                <h3>WALL-E</h3>
+                <p>Robot Recolector Inteligente</p>
+            </div>
+        </div>
+
+        <div class="redes">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+
+        <p>© 2026 MOBI-BIN 03 | Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
