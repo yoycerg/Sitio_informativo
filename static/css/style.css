@@ -271,7 +271,7 @@ font-size: 13px;
 }
 
 .hero-img img{
-
+border-radius: 20px;
     width:100%;
     animation:flotar 4s ease-in-out infinite;
 
@@ -1136,6 +1136,8 @@ h2{
     width:55px;
 
 }
+
+
 
 .hero{
 
