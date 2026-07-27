@@ -626,9 +626,6 @@ border-radius: 20px;
     box-shadow:var(--sombra);
 
     transition:.35s;
-
-    cursor:pointer;
-
 }
 
 .item:hover{
@@ -1195,6 +1192,7 @@ table{
 
     flex-direction:column;
     text-align:center;
+    
 
 }
 
