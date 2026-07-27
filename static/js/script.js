@@ -27,7 +27,7 @@ const traducciones = {
         card4Texto: "Fácil mantenimiento y expansión.",
 
         proyectoTitulo: "Sobre el Proyecto",
-        proyectoTexto: "MOBI-BIN 03 es un robot educativo creado para automatizar la recolección y clasificación de residuos.",
+        proyectoTexto: "WALL-E es un robot educativo creado para automatizar la recolección y clasificación de residuos.",
         objetivosTitulo: "Objetivos",
         objetivo1: "Reducir la contaminación.",
         objetivo2: "Promover el reciclaje.",
@@ -61,7 +61,7 @@ const traducciones = {
         espMotoresValor: "4 Motores DC",
 
         footerSubtitulo: "Robot Recolector Inteligente",
-        footerCopyright: "© 2026 MOBI-BIN 03 | Todos los derechos reservados."
+        footerCopyright: "© 2026 WALL-E | Todos los derechos reservados."
     },
 
     en: {
