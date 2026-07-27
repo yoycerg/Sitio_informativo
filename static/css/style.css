@@ -159,22 +159,17 @@ header{
 
     display:flex;
     align-items:center;
-    gap:15px;
+    gap: 5px;
 
 }
 
 .logo img{
 
-    width:150px;
+    width:60px;
 
 }
 
-.logo h2{
 
-    margin:0;
-    font-size:25px;
-
-}
 
 .logo span{
 
