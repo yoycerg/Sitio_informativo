@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>WALL-E</title>
+    <title>WALL-E | Robot Recolector de Residuos</title>
+    <meta name="description" content="WALL-E: robot educativo autónomo que detecta, recolecta y clasifica residuos reciclables utilizando Arduino UNO, sensores ultrasónicos y navegación inteligente.">
    <link rel="icon" type="image/png" href="static/images/logo.png">
     <link rel="stylesheet" href="static/css/style.css">
 
@@ -32,23 +33,35 @@
                 <h4>WALL-E</h4>
             </div>
 
-            <ul class="menu">
+            <ul class="menu" id="menu">
 
                 <li><a href="#inicio" data-i18n="menuInicio">Inicio</a></li>
+                <li><a href="#problematica" data-i18n="menuProblematica">Problemática</a></li>
                 <li><a href="#proyecto" data-i18n="menuProyecto">Proyecto</a></li>
-                <li><a href="#funcionamiento" data-i18n="menuFuncionamiento">Funcionamiento</a></li>
-                <li><a href="#componentes" data-i18n="menuComponentes">Componentes</a></li>
+                <li><a href="#ods" data-i18n="menuOds">ODS</a></li>
+                <li><a href="#tecnologias" data-i18n="menuTecnologias">Tecnología</a></li>
+                <li><a href="#equipo" data-i18n="menuEquipo">Equipo</a></li>
                 <li><a href="#galeria" data-i18n="menuGaleria">Galería</a></li>
-
+                <li><a href="#video" data-i18n="menuVideo">Video</a></li>
 
             </ul>
-            <div class="language-selector">
-                <select id="language">
-                    <option value="es">🇪🇸 Español</option>
-                    <option value="en">🇺🇸 English</option>
-                </select>
+
+            <div class="nav-derecha">
+
+                <div class="language-selector">
+                    <select id="language">
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
             </div>
-            
 
         </nav>
 
@@ -132,6 +145,45 @@
         </div>
     </section>
 
+    <!-- ================= PROBLEMÁTICA ================= -->
+
+    <section class="problematica" id="problematica">
+
+        <div class="titulo">
+            <h2 data-i18n="problematicaTitulo">Problemática</h2>
+            <p data-i18n="problematicaIntro">La gestión de residuos sigue siendo un desafío ambiental y social importante.</p>
+        </div>
+
+        <div class="problematica-grid">
+
+            <div class="problema-item">
+                <i class="fas fa-triangle-exclamation"></i>
+                <h3 data-i18n="problema1Titulo">Baja tasa de reciclaje</h3>
+                <p data-i18n="problema1Texto">Gran parte de los residuos reciclables terminan mezclados con la basura común por falta de separación adecuada.</p>
+            </div>
+
+            <div class="problema-item">
+                <i class="fas fa-hand-dots"></i>
+                <h3 data-i18n="problema2Titulo">Clasificación manual riesgosa</h3>
+                <p data-i18n="problema2Texto">Separar residuos a mano expone a las personas a elementos cortantes, contaminados o peligrosos.</p>
+            </div>
+
+            <div class="problema-item">
+                <i class="fas fa-seedling"></i>
+                <h3 data-i18n="problema3Titulo">Impacto ambiental</h3>
+                <p data-i18n="problema3Texto">Los residuos mal gestionados contaminan suelos y fuentes de agua, afectando ecosistemas completos.</p>
+            </div>
+
+            <div class="problema-item">
+                <i class="fas fa-graduation-cap"></i>
+                <h3 data-i18n="problema4Titulo">Falta de educación ambiental</h3>
+                <p data-i18n="problema4Texto">Existen pocas herramientas didácticas que enseñen de forma práctica la importancia del reciclaje.</p>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- ================= PROYECTO ================= -->
 
     <section class="proyecto" id="proyecto">
@@ -161,6 +213,42 @@
                 <img src="static/images/imagen_5.png" alt="Proyecto">
             </div>
         </div>
+
+        <div class="solucion">
+            <h3 data-i18n="solucionTitulo">Solución Tecnológica Propuesta</h3>
+            <p data-i18n="solucionTexto">WALL-E combina electrónica, sensórica y estructura impresa/mecanizada para automatizar un proceso que normalmente se hace a mano. Un microcontrolador Arduino UNO procesa las lecturas de los sensores ultrasónicos HC-SR04 para detectar y esquivar obstáculos mientras el robot se desplaza; al identificar un residuo, se acerca de forma autónoma y lo dirige al contenedor correspondiente mediante su sistema de motores DC controlado por un driver L298N. Una matriz LED 8x8 entrega retroalimentación visual del estado del robot. De esta forma, el proyecto convierte un proceso manual y riesgoso en uno automático, seguro y replicable con fines educativos.</p>
+        </div>
+    </section>
+
+    <!-- ================= ODS ================= -->
+
+    <section class="ods" id="ods">
+
+        <div class="titulo">
+            <h2 data-i18n="odsTitulo">Objetivo de Desarrollo Sostenible</h2>
+            <p data-i18n="odsIntro">WALL-E se vincula directamente con los Objetivos de Desarrollo Sostenible de la ONU.</p>
+        </div>
+
+        <div class="ods-grid">
+
+            <div class="ods-card ods-principal">
+                <div class="ods-numero">12</div>
+                <div class="ods-info">
+                    <h3 data-i18n="ods12Titulo">Producción y Consumo Responsables</h3>
+                    <p data-i18n="ods12Texto">Es el ODS principal del proyecto: WALL-E promueve la reducción y el aprovechamiento de los residuos al automatizar su clasificación, facilitando que más materiales reciclables vuelvan a la cadena productiva en lugar de terminar en vertederos.</p>
+                </div>
+            </div>
+
+            <div class="ods-card">
+                <div class="ods-numero">11</div>
+                <div class="ods-info">
+                    <h3 data-i18n="ods11Titulo">Ciudades y Comunidades Sostenibles</h3>
+                    <p data-i18n="ods11Texto">Al facilitar una correcta gestión de residuos, el proyecto aporta a comunidades más limpias, saludables y sostenibles en el tiempo.</p>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
     <!-- ================= FUNCIONAMIENTO ================= -->
@@ -195,6 +283,57 @@
         </div>
     </section>
 
+    <!-- ================= TECNOLOGÍAS ================= -->
+
+    <section class="tecnologias" id="tecnologias">
+
+        <div class="titulo">
+            <h2 data-i18n="tecnologiasTitulo">Tecnologías Utilizadas</h2>
+            <p data-i18n="tecnologiasIntro">Herramientas de hardware y software empleadas durante el desarrollo del proyecto.</p>
+        </div>
+
+        <div class="tecnologias-grid">
+
+            <div class="tec-item">
+                <i class="fas fa-microchip"></i>
+                <h3 data-i18n="tec1Titulo">Arduino UNO</h3>
+                <p data-i18n="tec1Texto">Microcontrolador principal, programado en C/C++ con el Arduino IDE.</p>
+            </div>
+
+            <div class="tec-item">
+                <i class="fas fa-satellite-dish"></i>
+                <h3 data-i18n="tec2Titulo">Sensores HC-SR04</h3>
+                <p data-i18n="tec2Texto">Sensores ultrasónicos utilizados para la detección de obstáculos y residuos.</p>
+            </div>
+
+            <div class="tec-item">
+                <i class="fas fa-bolt"></i>
+                <h3 data-i18n="tec3Titulo">Driver L298N</h3>
+                <p data-i18n="tec3Texto">Controlador de potencia para los motores DC del sistema de movimiento.</p>
+            </div>
+
+            <div class="tec-item">
+                <i class="fas fa-cube"></i>
+                <h3 data-i18n="tec4Titulo">Impresión 3D y MDF</h3>
+                <p data-i18n="tec4Texto">Fabricación del chasis y piezas estructurales del robot.</p>
+            </div>
+
+            <div class="tec-item">
+                <i class="fas fa-table-cells"></i>
+                <h3 data-i18n="tec5Titulo">Matriz LED 8x8</h3>
+                <p data-i18n="tec5Texto">Módulo de salida visual para mostrar el estado del robot.</p>
+            </div>
+
+            <div class="tec-item">
+                <i class="fas fa-diagram-project"></i>
+                <h3 data-i18n="tec6Titulo">Diseño y Prototipado</h3>
+                <p data-i18n="tec6Texto">Herramientas de diseño 2D/3D usadas para planificar la estructura antes de fabricarla.</p>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- ================= COMPONENTES ================= -->
 
     <section id="componentes">
@@ -215,6 +354,45 @@
         </div>
     </section>
 
+    <!-- ================= EQUIPO ================= -->
+
+    <section class="equipo" id="equipo">
+
+        <div class="titulo">
+            <h2 data-i18n="equipoTitulo">Nuestro Equipo</h2>
+            <p data-i18n="equipoIntro">Estudiantes responsables del diseño, la construcción y la programación de WALL-E.</p>
+        </div>
+
+        <div class="equipo-grid">
+
+            <div class="equipo-card">
+                <div class="equipo-avatar"><i class="fas fa-user"></i></div>
+                <h3>Nombre Apellido</h3>
+                <span data-i18n="rol1">Líder de Proyecto</span>
+            </div>
+
+            <div class="equipo-card">
+                <div class="equipo-avatar"><i class="fas fa-user"></i></div>
+                <h3>Nombre Apellido</h3>
+                <span data-i18n="rol2">Desarrollo de Hardware</span>
+            </div>
+
+            <div class="equipo-card">
+                <div class="equipo-avatar"><i class="fas fa-user"></i></div>
+                <h3>Nombre Apellido</h3>
+                <span data-i18n="rol3">Programación y Electrónica</span>
+            </div>
+
+            <div class="equipo-card">
+                <div class="equipo-avatar"><i class="fas fa-user"></i></div>
+                <h3>Nombre Apellido</h3>
+                <span data-i18n="rol4">Diseño y Documentación</span>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- ================= GALERÍA ================= -->
 
     <section id="galeria">
@@ -227,8 +405,30 @@
             <img src="static/images/imagen_1.png" alt="">
             <img src="static/images/imagen_2.png" alt="">
             <img src="static/images/imagen_3.png" alt="">
-            <img src="static/images/imagen_4 (1).png" alt="">
+            <img src="static/images/imagen_4b.png" alt="">
         </div>
+    </section>
+
+    <!-- ================= VIDEO ================= -->
+
+    <section class="video" id="video">
+
+        <div class="titulo">
+            <h2 data-i18n="videoTitulo">Video Demostrativo</h2>
+            <p data-i18n="videoIntro">Mira a WALL-E detectando, clasificando y almacenando residuos en funcionamiento.</p>
+        </div>
+
+        <div class="video-contenedor">
+            <!-- Reemplaza TU_ID_DE_VIDEO por el ID del video de YouTube (ej: https://www.youtube.com/watch?v=TU_ID_DE_VIDEO) -->
+            <iframe
+                src="https://www.youtube.com/embed/TU_ID_DE_VIDEO"
+                title="Video demostrativo WALL-E"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
     </section>
 
     <!-- ================= ESPECIFICACIONES ================= -->
