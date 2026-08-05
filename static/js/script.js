@@ -277,6 +277,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const menuToggle = document.getElementById("menuToggle");
     const menu = document.getElementById("menu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    function cerrarMenu() {
+        menu.classList.remove("activo");
+        menuToggle.classList.remove("activo");
+        menuToggle.setAttribute("aria-expanded", "false");
+        if (menuOverlay) menuOverlay.classList.remove("activo");
+        document.body.classList.remove("menu-abierto");
+    }
 
     if (menuToggle && menu) {
 
@@ -284,15 +293,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const abierto = menu.classList.toggle("activo");
             menuToggle.classList.toggle("activo");
             menuToggle.setAttribute("aria-expanded", abierto);
+            if (menuOverlay) menuOverlay.classList.toggle("activo", abierto);
+            document.body.classList.toggle("menu-abierto", abierto);
         });
 
         menu.querySelectorAll("a").forEach(enlace => {
-            enlace.addEventListener("click", () => {
-                menu.classList.remove("activo");
-                menuToggle.classList.remove("activo");
-                menuToggle.setAttribute("aria-expanded", "false");
-            });
+            enlace.addEventListener("click", cerrarMenu);
         });
+
+        if (menuOverlay) {
+            menuOverlay.addEventListener("click", cerrarMenu);
+        }
 
     }
 
