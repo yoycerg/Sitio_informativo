@@ -94,9 +94,10 @@ const traducciones = {
         equipoTitulo: "Nuestro Equipo",
         equipoIntro: "Estudiantes responsables del diseño, la construcción y la programación de WALL-E.",
         rol1: "Líder de Proyecto",
-        rol2: "Desarrollo de Hardware",
-        rol3: "Programación y Electrónica",
-        rol4: "Diseño y Documentación",
+        rol2: "Sub Líder de Proyecto",
+        rol3: "Desarrollo de Hardware",
+        rol4: "Programación y Electrónica",
+        rol5: "Diseño y Documentación",
 
         galeriaTitulo: "Galería",
 
@@ -205,9 +206,10 @@ const traducciones = {
         equipoTitulo: "Our Team",
         equipoIntro: "Students responsible for designing, building and programming WALL-E.",
         rol1: "Project Lead",
-        rol2: "Hardware Development",
-        rol3: "Programming and Electronics",
-        rol4: "Design and Documentation",
+        rol2: "Project Sub-Lead",
+        rol3: "Hardware Development",
+        rol4: "Programming and Electronics",
+        rol5: "Design and Documentation",
 
         galeriaTitulo: "Gallery",
 
