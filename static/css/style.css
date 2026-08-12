@@ -287,7 +287,9 @@ border-radius: 20px;
     transform:translateY(-6px);
     background:var(--verdeOscuro);
 }
-
+.qr {
+    text-align: center;
+}
 .btn-blanco{
     padding:16px 34px;
     border-radius:50px;
